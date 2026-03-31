@@ -21,6 +21,7 @@ body {
   color: #042C53;
 }
 
+/* CONTAINER */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -31,12 +32,12 @@ body {
 .hero {
   text-align: center;
   padding-top: 80px;
+  animation: fadeUp 1s ease;
 }
 
 .hero h1 {
   font-size: 48px;
   font-weight: 700;
-  letter-spacing: -1px;
 }
 
 .hero p {
@@ -45,10 +46,11 @@ body {
   color: #555;
 }
 
+/* CTA */
 .cta {
   display: inline-block;
   margin-top: 30px;
-  background: #378ADD;
+  background: #25D366;
   color: white;
   padding: 16px 28px;
   border-radius: 8px;
@@ -58,13 +60,14 @@ body {
 }
 
 .cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(55,138,221,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* SECTIONS */
 .section {
-  margin-top: 80px;
+  margin-top: 100px;
+  animation: fadeUp 1s ease;
 }
 
 .section h2 {
@@ -72,6 +75,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* GRID */
 .grid {
   display: grid;
   gap: 20px;
@@ -90,8 +94,8 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
 }
 
 /* FEATURE */
@@ -100,6 +104,13 @@ body {
   gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: center;
+}
+
+/* PRINT */
+.print {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* PRICING */
@@ -117,15 +128,19 @@ body {
 }
 
 .highlight {
-  border: 2px solid #378ADD;
+  border: 2px solid #25D366;
 }
 
-.price h3 {
-  margin-bottom: 10px;
-}
-
-.price strong {
-  font-size: 24px;
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 footer {
@@ -143,49 +158,54 @@ footer {
 
   <!-- HERO -->
   <div class="hero">
-    <h1>Organize suas ordens de serviço sem planilhas</h1>
-    <p>Controle OS, orçamentos e clientes direto pelo Telegram — sem instalar nada.</p>
-    <a class="cta" href="#">Testar grátis por 30 dias</a>
+    <h1>Pare de perder tempo com OS desorganizada</h1>
+    <p>Controle ordens de serviço, clientes e orçamentos direto pelo Telegram.</p>
+    <a class="cta" href="https://wa.me/SEUNUMERO" target="_blank">
+      Falar no WhatsApp
+    </a>
   </div>
 
   <!-- PROBLEMAS -->
   <div class="section">
-    <h2>Problemas comuns no dia a dia</h2>
+    <h2>Você passa por isso?</h2>
     <div class="grid cards">
-      <div class="card">OS espalhadas em papel e WhatsApp</div>
-      <div class="card">Clientes pedindo status o tempo todo</div>
-      <div class="card">Orçamentos demorados e perda de serviço</div>
-      <div class="card">Falta de controle financeiro</div>
+      <div class="card">OS em papel, WhatsApp ou planilha</div>
+      <div class="card">Cliente ligando e você sem resposta</div>
+      <div class="card">Orçamentos demorados</div>
+      <div class="card">Sem controle do faturamento</div>
     </div>
   </div>
 
-  <!-- SOLUÇÃO -->
+  <!-- SOLUÇÃO + PRINT -->
   <div class="section feature">
     <div>
-      <h2>Um sistema simples que resolve isso</h2>
-      <p>O Zentrix organiza tudo automaticamente — da entrada do equipamento até a entrega.</p>
-    </div>
-    <div class="card">
-      ✔ Criação automática de OS<br><br>
+      <h2>Organize tudo em um só lugar</h2>
+      <p>O Zentrix automatiza seu fluxo de atendimento do início ao fim.</p>
+      <br>
+      ✔ Criação de OS automática<br><br>
       ✔ Orçamento pronto para envio<br><br>
       ✔ Histórico completo<br><br>
       ✔ Controle de status<br><br>
       ✔ Relatórios de faturamento
     </div>
+
+    <div>
+      <img src="print.png" alt="Sistema Zentrix" class="print">
+    </div>
   </div>
 
   <!-- DIFERENCIAL -->
   <div class="section">
-    <h2>Feito por quem conhece o seu trabalho</h2>
+    <h2>Feito por quem vive assistência técnica</h2>
     <div class="card">
       Mais de 20 anos no mercado de iluminação profissional.  
-      Não é software genérico — é feito para assistência técnica real.
+      Criado para a realidade do seu dia a dia.
     </div>
   </div>
 
   <!-- PREÇOS -->
   <div class="section">
-    <h2>Planos simples</h2>
+    <h2>Planos</h2>
     <div class="pricing">
 
       <div class="price">
@@ -197,7 +217,7 @@ footer {
       <div class="price highlight">
         <h3>Pro</h3>
         <strong>R$249/mês</strong>
-        <p>OS ilimitadas + relatórios</p>
+        <p>OS ilimitadas</p>
       </div>
 
       <div class="price">
@@ -212,8 +232,10 @@ footer {
   <!-- CTA FINAL -->
   <div class="hero">
     <h2>Teste sem compromisso</h2>
-    <p>Primeiro mês gratuito. Sem contrato.</p>
-    <a class="cta" href="#">Agendar demonstração</a>
+    <p>Primeiro mês gratuito.</p>
+    <a class="cta" href="https://wa.me/SEUNUMERO" target="_blank">
+      Falar no WhatsApp agora
+    </a>
   </div>
 
   <footer>
